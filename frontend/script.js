@@ -1,9 +1,16 @@
 document.addEventListener("DOMContentLoaded", function () {
     const form = document.getElementById("prediction-form");
     const resultDiv = document.getElementById("result");
+    const loadingDiv = document.getElementById("loading");
+    const predictBtn = document.getElementById("predict-btn");
 
     form.addEventListener("submit", async function (event) {
         event.preventDefault();
+        
+        // Show loading state
+        loadingDiv.style.display = 'flex';
+        resultDiv.style.display = 'none';
+        predictBtn.disabled = true;
         
         const data = {
             container_memory_working_set_bytes: parseFloat(document.getElementById("memory_working_set").value),
@@ -24,16 +31,26 @@ document.addEventListener("DOMContentLoaded", function () {
             });
 
             if (!response.ok) {
-                throw new Error("Network response was not ok");
+                throw new Error(`HTTP error! status: ${response.status}`);
             }
 
             const result = await response.json();
-            resultDiv.textContent = `Prediction: Pod Failure - ${result.prediction[0][0]}, Network Issue - ${result.prediction[0][1]}`;
-            resultDiv.style.color = "green";
+            
+            // Format the results exactly as in your original script
+            const podFailureProb = result.prediction[0][0];
+            const networkIssueProb = result.prediction[0][1];
+            
+            resultDiv.textContent = `Prediction: Pod Failure - ${podFailureProb}, Network Issue - ${networkIssueProb}`;
+            resultDiv.className = "result-container result-success";
+            
         } catch (error) {
-            resultDiv.textContent = "Error: Could not fetch prediction";
-            resultDiv.style.color = "red";
             console.error("Error:", error);
+            resultDiv.textContent = "Error: Could not fetch prediction";
+            resultDiv.className = "result-container result-error";
+        } finally {
+            loadingDiv.style.display = 'none';
+            resultDiv.style.display = 'block';
+            predictBtn.disabled = false;
         }
     });
 });
