@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pod Failure & Network Issue Prediction</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Pod Failure & Network Issue Prediction</h1>
+        <form id="prediction-form">
+            <label for="memory_working_set">Memory Working Set Bytes:</label>
+            <input type="number" id="memory_working_set" step="any" required>
+            
+            <label for="memory_usage">Memory Usage Bytes:</label>
+            <input type="number" id="memory_usage" step="any" required>
+            
+            <label for="file_descriptors">File Descriptors:</label>
+            <input type="number" id="file_descriptors" step="any" required>
+            
+            <label for="network_receive_rate">Network Receive Bytes Rate:</label>
+            <input type="number" id="network_receive_rate" step="any" required>
+            
+            <label for="total_header">Total Header Bytes:</label>
+            <input type="number" id="total_header" step="any" required>
+            
+            <button type="submit">Predict</button>
+        </form>
+        <div id="result"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
