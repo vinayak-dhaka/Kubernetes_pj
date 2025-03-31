@@ -1,6 +1,5 @@
 import json
 import requests
-import requests
 import json
 
 # Define the API URL
