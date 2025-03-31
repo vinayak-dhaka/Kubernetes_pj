@@ -4,30 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pod Failure & Network Issue Prediction</title>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Animate.css for animations -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Pod Failure & Network Issue Prediction</h1>
-        <form id="prediction-form">
-            <label for="memory_working_set">Memory Working Set Bytes:</label>
-            <input type="number" id="memory_working_set" step="any" required>
+    <div class="container animate__animated animate__fadeIn">
+        <h1 class="title-animation"><i class="fas fa-chart-line"></i> Pod Failure & Network Issue Prediction</h1>
+        <form id="prediction-form" class="form-animation">
+            <div class="input-group">
+                <label for="memory_working_set"><i class="fas fa-microchip icon-animation"></i> Memory Working Set Bytes:</label>
+                <input type="number" id="memory_working_set" step="any" required class="input-animation">
+            </div>
             
-            <label for="memory_usage">Memory Usage Bytes:</label>
-            <input type="number" id="memory_usage" step="any" required>
+            <div class="input-group">
+                <label for="memory_usage"><i class="fas fa-memory icon-animation"></i> Memory Usage Bytes:</label>
+                <input type="number" id="memory_usage" step="any" required class="input-animation">
+            </div>
             
-            <label for="file_descriptors">File Descriptors:</label>
-            <input type="number" id="file_descriptors" step="any" required>
+            <div class="input-group">
+                <label for="file_descriptors"><i class="fas fa-folder-open icon-animation"></i> File Descriptors:</label>
+                <input type="number" id="file_descriptors" step="any" required class="input-animation">
+            </div>
             
-            <label for="network_receive_rate">Network Receive Bytes Rate:</label>
-            <input type="number" id="network_receive_rate" step="any" required>
+            <div class="input-group">
+                <label for="network_receive_rate"><i class="fas fa-network-wired icon-animation"></i> Network Receive Bytes Rate:</label>
+                <input type="number" id="network_receive_rate" step="any" required class="input-animation">
+            </div>
             
-            <label for="total_header">Total Header Bytes:</label>
-            <input type="number" id="total_header" step="any" required>
+            <div class="input-group">
+                <label for="total_header"><i class="fas fa-file-code icon-animation"></i> Total Header Bytes:</label>
+                <input type="number" id="total_header" step="any" required class="input-animation">
+            </div>
             
-            <button type="submit">Predict</button>
+            <button type="submit" id="predict-btn" class="btn-animation">
+                <i class="fas fa-rocket"></i> Predict
+            </button>
         </form>
-        <div id="result"></div>
+        <div id="result" class="result-container animate__animated"></div>
+        <div id="loading" class="loading-container">
+            <i class="fas fa-spinner fa-spin"></i> Processing prediction...
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
