@@ -1,5 +1,5 @@
 # Kubernetes Project Deployment
-
+Working Link : https://67eb7b3602afc75d81781716--golden-sopapillas-bed010.netlify.app/
 ![Kubernetes Logo](https://upload.wikimedia.org/wikipedia/commons/3/39/Kubernetes_logo_without_workmark.svg)
 
 This repository contains Kubernetes configurations and deployment scripts for containerized applications. It provides a structured approach to deploying applications on Kubernetes clusters.
