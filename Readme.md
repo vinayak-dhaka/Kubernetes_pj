@@ -10,6 +10,7 @@ This repository contains Kubernetes configurations and deployment scripts for co
 - [Installation](#installation)
 - [Usage](#usage)
 - [Configuration](#configuration)
+- [Monitoring Metrics](#monitoring-metrics)
 - [Examples](#examples)
 - [Contributing](#contributing)
 - [License](#license)
@@ -37,3 +38,8 @@ Before using this project, ensure you have:
    ```bash
    git clone https://github.com/vinayak-dhaka/Kubernetes_pj.git
    cd Kubernetes_pj
+   pip install -r requirements.txt
+   cd backend
+2. Run backend :
+```bash
+   uvicorn main:app --reload
