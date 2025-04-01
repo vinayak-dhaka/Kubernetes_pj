@@ -43,3 +43,6 @@ Before using this project, ensure you have:
 2. Run backend :
 ```bash
    uvicorn main:app --reload
+```
+3. Run frontend:
+   index.html
