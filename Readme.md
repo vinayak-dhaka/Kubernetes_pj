@@ -8,12 +8,7 @@ This repository contains Kubernetes configurations and deployment scripts for co
 - [Features](#features)
 - [Prerequisites](#prerequisites)
 - [Installation](#installation)
-- [Usage](#usage)
-- [Configuration](#configuration)
-- [Monitoring Metrics](#monitoring-metrics)
-- [Examples](#examples)
-- [Contributing](#contributing)
-- [License](#license)
+
 
 ## Features
 
