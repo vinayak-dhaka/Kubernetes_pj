@@ -10,34 +10,30 @@ This repository contains Kubernetes configurations and deployment scripts for co
 - [Installation](#installation)
 
 
-## Features
+## Pod Failure = 1
+This means the model has detected a pod failure scenario.
 
-- Ready-to-use Kubernetes manifests for deployments, services, and configurations
-- Organized directory structure for different Kubernetes resources
-- Sample configurations for common application setups
-- Scalable deployment patterns
-- Best practices for Kubernetes resource management
+A "pod failure" is when a Kubernetes pod (which holds one or more containers) crashes or becomes unhealthy.
 
-## Prerequisites
+1 means "yes, failure detected"
+0 would mean "no failure"
 
-Before using this project, ensure you have:
+Pod failures can happen due to:
 
-- [kubectl](https://kubernetes.io/docs/tasks/tools/) installed
-- Access to a Kubernetes cluster (Minikube, Kind, or cloud provider)
-- [Docker](https://docs.docker.com/get-docker/) installed (for building images)
-- Basic understanding of Kubernetes concepts
+CrashLoopBackOff (container crashing in loop)
+OOMKilled (ran out of memory)
+ImagePull errors
+Unhealthy liveness/readiness probes
 
-## Installation
+🌐 Network Issue = 1
+This means the model has predicted a network-related issue inside the cluster.
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/vinayak-dhaka/Kubernetes_pj.git
-   cd Kubernetes_pj
-   pip install -r requirements.txt
-   cd backend
-2. Run backend :
-```bash
-   uvicorn main:app --reload
-```
-3. Run frontend:
-   index.html
+Could be DNS resolution issues
+Node/pod not able to reach the internet or other pods
+Service discovery failing
+Flaky inter-pod connectivity
+
+1 means: network issue detected
+0 means: network seems fine
+
+
