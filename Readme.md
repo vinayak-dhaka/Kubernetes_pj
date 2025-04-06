@@ -15,7 +15,7 @@ This means the model has detected a pod failure scenario.
 
 A "pod failure" is when a Kubernetes pod (which holds one or more containers) crashes or becomes unhealthy.
 
-1 means "yes, failure detected"
+1 means "yes, failure detected" ,
 0 would mean "no failure"
 
 Pod failures can happen due to:
@@ -33,7 +33,7 @@ Node/pod not able to reach the internet or other pods
 Service discovery failing
 Flaky inter-pod connectivity
 
-1 means: network issue detected
+1 means: network issue detected ,
 0 means: network seems fine
 
 
