@@ -25,7 +25,7 @@ OOMKilled (ran out of memory)
 ImagePull errors
 Unhealthy liveness/readiness probes
 
-🌐 Network Issue = 1
+##Network Issue = 1
 This means the model has predicted a network-related issue inside the cluster.
 
 Could be DNS resolution issues
